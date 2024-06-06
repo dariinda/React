@@ -1,16 +1,51 @@
 import React from "react";
-import ReactDOM from "react-dom"
+import ReactDOM from "react-dom/client";
 
-const Parent = React.createElement(
-    "div",
-    {id:"Parent"},
-    React.createElement (
-        "div",
-        {id : "child"},
-        [React.createElement("h1",{},"Hello everyone"),React.createElement("h2",{},"Hello everyone")]
-    )
-);
+/**
+ * APP
+ *  Header
+ *   - Logo
+ *   - Nav Items
+ *  Body
+ *   - search
+ *   - restro Body
+ *        - restro card
+ *  Footer
+ *   - copyright
+ *   - links
+ */
 
-const root = ReactDOM.createRoot(document.getElementById("root"));
+const Header = () => {
+  return (
+    <div className="Header" >
+      <div className="LogoContainer">
+        <img className="logo" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSxodBCOx28Vb76OItsEulidWkalURaNu3sMw&s" />
+      </div>
+      <ul className="NavItems">
+        <li>About</li>
+        <li>Contact</li>
+        <li>Cart</li>
+      </ul>
+    </div>
+  );
+};
 
-root.render(Parent);
+const Body = () => {
+    return (
+        <div className="Body">
+            <div className="SearchBox"></div>
+            <div></div>
+        </div>
+    );
+};
+
+const AppLayout = () => {
+  return (
+    <div className="App">
+      <Header />
+      <Body />
+    </div>
+  );
+};
+const root = ReactDOM.createRoot(document.getElementById("head"));
+root.render(<AppLayout />);
