@@ -1,27 +1,90 @@
-*{
-    margin: 0px;
+* {
+  margin: 0px;
 }
-.Header{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-
-.logo{
-    width: 120px;
-    height: 120px;
-    padding: 5px;
+.Header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
-.NavItems{
-    display: flex;
-    gap: 30px;
-    justify-content: space-between;
-    padding-left: 0px;
-    list-style-type: none;
-    padding : 0 40px 0 0;
-    margin: 0px;
-    font-size: large;
-    font-family:monospace;
-    font-weight: 600;
+.logo {
+  width: 120px;
+  height: 120px;
+  padding-left: 20px;
+}
+
+.NavItems {
+  display: flex;
+  gap: 30px;
+  justify-content: space-between;
+  padding-left: 0px;
+  list-style-type: none;
+  padding: 0 80px 0 0;
+  margin: 0px;
+  font-size: large;
+  font-family: monospace;
+  font-weight: 600;
+}
+
+.Search {
+  padding: 0 50px;
+}
+
+.SearchBox {
+  padding: 6px;
+  width: 300px;
+  border-radius: 5px;
+  border: 1px solid black;
+}
+
+.resto-container {
+  padding-top: 36px;
+  padding-left: 50px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 35px;
+}
+
+.restoCard {
+  width: 250px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+.restoCard:hover {
+  border: 2px solid black;
+}
+.restoImg {
+  border-radius: 9px;
+  height: 225px;
+  overflow: hidden;
+  position: relative;
+}
+.foodImg {
+  border-radius: 10px 10px 0 0;
+  width: 100%;
+  object-fit: cover;
+  position: absolute;
+}
+.restoDetail {
+  padding: 25px;
+}
+.restoDetail > h5 {
+  color: gray;
+  padding-top: 5px;
+  font-weight: 300;
+}
+.restoDel {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 15px;
+}
+.cartAdd {
+  display: flex;
+  width: 100%;
+  height: 44px;
+  background-color: rgb(27, 152, 241);
+  border-radius: 0 0 10px 10px;
+  color: white;
+  justify-content: center;
+  align-items: center;
 }
