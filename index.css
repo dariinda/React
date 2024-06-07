@@ -25,6 +25,11 @@
   font-family: monospace;
   font-weight: 600;
 }
+.sortingRestros{
+    display: flex;
+    justify-content: space-between;
+    padding-right: 80px;
+}
 
 .Search {
   padding: 0 50px;
@@ -35,6 +40,15 @@
   width: 300px;
   border-radius: 5px;
   border: 1px solid black;
+}
+
+.filterbtn{
+    width: 50px;
+    height: 30px;
+    background-color: white;
+    border-radius: 5px;
+    border: 1px solid gray;
+    color: black;
 }
 
 .resto-container {
