@@ -1,4 +1,3 @@
-import resList from "../utils/resList";
 import { CDN_URL } from "../utils/constants";
 
 const RestaurantCard = (props) => {
