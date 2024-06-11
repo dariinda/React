@@ -6,6 +6,7 @@ import RestaurantCard from "./components/RestaurantCard";
 import { createBrowserRouter , RouterProvider } from "react-router-dom";
 import About from "./components/About";
 import ContactUs from "./components/ContactUs";
+import Error from "./components/Error";
 
 const AppLayout = () => {
   return (
