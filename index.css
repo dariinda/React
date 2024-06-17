@@ -202,7 +202,6 @@
   align-items: center;
   padding: 120px;
   background-color: rgb(228, 245, 255);
-  border-radius: 0 150px 150px 0;
 }
 .missionTitle{
   font-weight: 800;
@@ -223,7 +222,6 @@
   align-items: center;
   padding: 100px;
   background-color: rgb(254,234,230);
-  border-radius:150px 0 0 150px;
 }
 .historyImg{
   width: 400px;
@@ -238,6 +236,7 @@
   background-color: rgb(252,252,236);
 }
 .TeamDesc{
+  
   padding-top: 50px ;
   padding-bottom: 50px;
   padding-left: 120px;
@@ -255,3 +254,58 @@
   font-size: 17px;
 }
 
+
+
+/*
+  Team Members details
+*/
+.TeamMemberCardCtr{
+  padding-left: 120px;
+  padding-right: 120px;
+  padding-top: 10px;
+  padding-bottom:50px ;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  justify-content: space-between;
+}
+
+.TeamMemberCard{
+  width: 180px;
+  height: 200px;
+  border: 1px solid black;
+  border-radius: 10px;
+}
+.MemberImgCtr{
+  width: 100px;
+  height: 100px;
+  position: relative;
+}
+.MemberImg{
+  position: absolute;
+  top:10px;
+  left:40px;
+  border-radius: 100px;
+  width: 100px;
+  border: 1px solid black;
+}
+.TeamDiv{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 25px;
+  line-height: 23px;
+}
+.MemberName{
+  font-weight: 800;
+  font-size: 20px;
+}
+.MemberDesignation{
+  font-weight: 300;
+  color: gray;
+  font-size: 13px;
+}
+.MemberCountry{
+  font-weight: 100;
+}

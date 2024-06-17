@@ -1,4 +1,6 @@
 import React from "react";
+import TeamMemberCard from "./TeamMemberCard";
+import TeamMemberDetails from "./TeamMemberDetails";
 
 function About() {
   return (
@@ -55,11 +57,21 @@ function About() {
       <div className="ourTeamContainer">
         <div className="TeamDesc">
           <div className="ourTeamTitle">Our Team</div>
-          <div className="aboutTeam"><p>We are a team of dedicated scientist and business leaders, with a passion and commitments to great and healthy food.</p></div>
+          <div className="aboutTeam">
+            <p>
+              We are a team of dedicated scientist and business leaders, with a
+              passion and commitments to great and healthy food.
+            </p>
+          </div>
         </div>
-        <div className="TeamMemberCard">
-          <div>ewsfdubovln</div>
-          <div>waeidfbuov;cboaubd</div>
+        <div className="TeamMemberCardCtr">
+          {TeamMemberDetails.map((member) => (
+            <TeamMemberCard 
+            name={member.name} 
+            designation={member.designation}
+            country={member.country}
+            src={member.src}/>
+          ))}
         </div>
       </div>
     </div>
