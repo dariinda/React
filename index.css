@@ -183,16 +183,17 @@
 .aboutUsHero {
   width: screen;
   height: 150px;
-  background-color: rgb(40, 172, 104);
+  background-color: rgb(0,93,95);
   color: #f0f0f0;
   font-size: 50px;
   padding-left: 120px;
   padding-right: 100px;
-  padding-bottom: 30px;
+  padding-bottom: 20px;
   padding-top: 50px;
+  border-radius:150px 0 0 150px;
 }
-.aboutUsHero > .span {
-  color: rgb(0, 0, 0);
+.aboutUsHero > .divtwo{
+  color: rgb(234,234,60);
 }
 .ourMission {
   width: fit-content;
@@ -201,7 +202,56 @@
   align-items: center;
   padding: 120px;
   background-color: rgb(228, 245, 255);
+  border-radius: 0 150px 150px 0;
+}
+.missionTitle{
+  font-weight: 800;
+  font-size: 40px;
+  line-height: 80px;
+}
+.missionDesc{
+  font-size: 17px;
+  font-weight:500;
 }
 .missionImg {
-  width: 350px;
+  width: 400px;
 }
+.history {
+  width: fit-content;
+  display: flex;
+  gap: 300px;
+  align-items: center;
+  padding: 100px;
+  background-color: rgb(254,234,230);
+  border-radius:150px 0 0 150px;
+}
+.historyImg{
+  width: 400px;
+}
+.historyTitle{
+  font-weight: 800;
+  font-size: 40px;
+  line-height: 80px;
+}
+.ourTeamContainer{
+  width: screen;
+  background-color: rgb(252,252,236);
+}
+.TeamDesc{
+  padding-top: 50px ;
+  padding-bottom: 50px;
+  padding-left: 120px;
+  padding-right: 120px;
+  display: flex;
+  gap: 300px;
+  align-items: center;
+}
+.ourTeamTitle{
+  font-weight: 800;
+  font-size: 40px;
+  line-height: 80px;
+}
+.aboutTeam{
+  font-size: 17px;
+}
+
