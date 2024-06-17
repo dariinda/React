@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import RestaurantCard from "./RestaurantCard";
 import Shimmer from "./Shimmer";
 import { FaSearch } from "react-icons/fa";
+import {Link} from "react-router-dom";
 
 const Body = () => {
   const [resList, setResList] = useState([]);
@@ -55,7 +56,11 @@ const Body = () => {
       </div>
       <div className="resto-container">
         {FilresList.map((restraurant) => (
-          <RestaurantCard key={restraurant.info.id} resData={restraurant} />
+          <Link 
+            key={restraurant.info.id} 
+            to={"/Restaurants/"+restraurant.info.id}>
+            <RestaurantCard  resData={restraurant} />
+          </Link>
         ))}
       </div>
     </div>
