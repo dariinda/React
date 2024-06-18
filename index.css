@@ -183,14 +183,13 @@
 .aboutUsHero {
   width: screen;
   height: 150px;
-  background-color: rgb(0,93,95);
+  background-color: rgb(45, 121, 122);
   color: #f0f0f0;
   font-size: 50px;
   padding-left: 120px;
   padding-right: 100px;
   padding-bottom: 20px;
   padding-top: 50px;
-  border-radius:150px 0 0 150px;
 }
 .aboutUsHero > .divtwo{
   color: rgb(234,234,60);
@@ -266,7 +265,7 @@
   padding-bottom:50px ;
   display: flex;
   flex-wrap: wrap;
-  gap: 40px;
+  gap: 30px;
   justify-content: space-between;
 }
 
