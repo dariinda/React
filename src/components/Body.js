@@ -3,6 +3,7 @@ import RestaurantCard from "./RestaurantCard";
 import Shimmer from "./Shimmer";
 import { FaSearch } from "react-icons/fa";
 import {Link} from "react-router-dom";
+import useOnlineStatus from "../utils/useOnlineStatus";
 
 const Body = () => {
   const [resList, setResList] = useState([]);
@@ -20,9 +21,15 @@ const Body = () => {
     );
     const json = await data.json();
     console.log(json);
-    setResList(json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
-    setFilresList(json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
+    setResList(json?.data?.cards[3]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
+    setFilresList(json?.data?.cards[3]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
   };
+
+  //Adding online status feature to our app
+  const onlineStatus = useOnlineStatus();
+  if(onlineStatus===false){
+    return <h1>It seems you are offline !! Please check your internet connnection.</h1>
+  }
 
 
   //Adding loading , until API is fetched 
