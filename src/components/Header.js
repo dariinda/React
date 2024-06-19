@@ -2,10 +2,12 @@ import { useState } from "react";
 import { LOGO_URL } from "../utils/constants";
 import {Link} from "react-router-dom";
 import ContactUs from "./ContactUs";
+import useOnlineStatus from "../utils/useOnlineStatus";
 
 const Header = () => {
 
     let [signButton, setSignButton] = useState("Log In");
+    const onlineStatus= useOnlineStatus(true);
 
 
     return (
@@ -16,6 +18,7 @@ const Header = () => {
           </Link>
         </div>
         <ul className="NavItems">
+          <li>{onlineStatus ? "🟢 Online":"⭕ Offline"}</li>
           <li><Link to="/About">About</Link></li>
           <li><Link to="ContactUs">Contact</Link></li>
           <li>Cart</li>
