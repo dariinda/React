@@ -8,7 +8,6 @@ import useOnlineStatus from "../utils/useOnlineStatus";
 const Body = () => {
   const [resList, setResList] = useState([]);
   const [FilresList, setFilresList] = useState([]);
-
   const [searchText, setSearchText] = useState("");
 
   useEffect(() => {
@@ -21,8 +20,8 @@ const Body = () => {
     );
     const json = await data.json();
     console.log(json);
-    setResList(json?.data?.cards[3]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
-    setFilresList(json?.data?.cards[3]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
+    setResList(json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
+    setFilresList(json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
   };
 
   //Adding online status feature to our app
