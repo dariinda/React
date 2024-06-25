@@ -4,14 +4,15 @@ import TeamMemberDetails from "./TeamMemberDetails";
 
 function About() {
   return (
-    <div className="aboutUs">
-      <div className="aboutUsHero">
-        <div>About</div>
-        <div className="divtwo">Food Alix</div>
+    <div className="w-full max-w-screen-lg mx-auto px-4 md:px-8 my-10">
+      <div className="flex flex-col font-bold text-2xl sm:text-3xl mb-12 px-8">
+        <div className=" ">About</div>
+        <div className=" text-orange-400 mt-2 sm:mt-0">Food Alix</div>
       </div>
-      <div className="ourMission">
-        <div className="missionDesc">
-          <div className="missionTitle">Mission</div>
+
+      <div className="flex flex-col md:flex-row justify-between bg-sky-100 p-8 items-center rounded-3xl mb-6">
+        <div className="missionDesc mb-4 md:mb-0 md:w-1/2 pr-7">
+          <div className="missionTitle font-bold text-2xl mb-4">Mission</div>
           <div>
             <p>
               Our mission is to deliver delicious, high-quality meals from your
@@ -23,22 +24,24 @@ function About() {
             </p>
           </div>
         </div>
-        <div className="missionImgCtr">
+        <div className="missionImgCtr w-full md:w-1/2 flex justify-center px-4 md:px-20">
           <img
-            className="missionImg"
+            className="w-3/4 lg:w-3/4"
             src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSP7IEJ9WZ1HwuTM8Cch1gragAuRzdvhMnuXw&s"
+            alt="Mission Image"
           />
         </div>
       </div>
-      <div className="history">
+
+      <div className="flex flex-col md:flex-row justify-around bg-rose-100 p-8 items-center rounded-3xl mb-6">
         <div className="historyImgCtr">
           <img
-            className="historyImg"
+            className="historyImg w-full lg:w-3/4"
             src="https://cdni.iconscout.com/illustration/premium/thumb/greece-history-5526266-4620026.png?f=webp"
           />
         </div>
-        <div className="historyDesc">
-          <div className="historyTitle">History</div>
+        <div className="historyDesc mb-4 md:mb-0 md:w-1/2 pr-7">
+          <div className="historyTitle font-bold text-2xl mb-4">History</div>
           <div>
             <p>
               Founded in 2010, our food delivery company began as a small
@@ -54,23 +57,28 @@ function About() {
           </div>
         </div>
       </div>
-      <div className="ourTeamContainer">
-        <div className="TeamDesc">
-          <div className="ourTeamTitle">Our Team</div>
-          <div className="aboutTeam">
+
+      <div className="ourTeamContainer flex flex-col justify-around p-8 bg-fuchsia-200 rounded-3xl">
+        <div className="TeamDesc flex flex-col md:flex-row justify-between items-center py-2 mb-8">
+          <div className="ourTeamTitle font-bold text-2xl mb-4 md:mb-0 md:w-auto">
+            Our Team
+          </div>
+          <div className="aboutTeam text-center md:text-left md:max-w-md w-full md:w-auto md:ml-4">
             <p>
-              We are a team of dedicated scientist and business leaders, with a
-              passion and commitments to great and healthy food.
+              We are a team of dedicated scientists and business leaders, with a
+              passion and commitment to great and healthy food.
             </p>
           </div>
         </div>
-        <div className="TeamMemberCardCtr">
+
+        <div className="TeamMemberCardCtr flex justify-between ">
           {TeamMemberDetails.map((member) => (
-            <TeamMemberCard 
-            name={member.name} 
-            designation={member.designation}
-            country={member.country}
-            src={member.src}/>
+            <TeamMemberCard
+              name={member.name}
+              designation={member.designation}
+              country={member.country}
+              src={member.src}
+            />
           ))}
         </div>
       </div>

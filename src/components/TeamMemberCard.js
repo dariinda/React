@@ -1,14 +1,14 @@
 
 const TeamMemberCard = ({name, designation, country,src})=>{
     return (
-        <div className="TeamMemberCard">
+        <div className="TeamMemberCard w-32">
             <div className="MemberImgCtr">
-                <img  className="MemberImg" src={src}/>
+                <img  className="MemberImg rounded-full" src={src}/>
             </div>
-            <div className="TeamDiv">
-                <div className="MemberName">{name}</div>
-                <div className="MemberDesignation">{designation}</div>
-                <div className="MemberCountry">{country}</div>
+            <div className="TeamDiv text-center">
+                <div className="MemberName font-bold">{name}</div>
+                <div className="MemberDesignation text-xs">{designation}</div>
+                <div className="MemberCountry fonr-semibold">{country}</div>
             </div>
         </div>
     )

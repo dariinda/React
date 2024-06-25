@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import RestaurantCard from "./RestaurantCard";
 import Shimmer from "./Shimmer";
 import { FaSearch } from "react-icons/fa";
-import {Link} from "react-router-dom";
+import { Link } from "react-router-dom";
 import useOnlineStatus from "../utils/useOnlineStatus";
 
 const Body = () => {
@@ -20,35 +20,55 @@ const Body = () => {
     );
     const json = await data.json();
     console.log(json);
-    setResList(json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
-    setFilresList(json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
+    setResList(
+      json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants
+    );
+    setFilresList(
+      json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants
+    );
   };
 
   //Adding online status feature to our app
   const onlineStatus = useOnlineStatus();
-  if(onlineStatus===false){
-    return <h1>It seems you are offline !! Please check your internet connnection.</h1>
+  if (onlineStatus === false) {
+    return (
+      <h1>
+        It seems you are offline !! Please check your internet connnection.
+      </h1>
+    );
   }
 
+  //Adding loading , until API is fetched
 
-  //Adding loading , until API is fetched 
-  
-  return (resList.length === 0 )? <Shimmer/> : (
-    <div className="Body">
-      <div className="sortingRestros">
-        <div className="Search">
-          <input className="SearchBox" placeholder="Restros ...." value={searchText} onChange={(e)=>{
-            setSearchText(e.target.value);
-          }} />
-          <button className="SearchBtn" onClick={()=>{
-            let filterdRes = resList.filter((res)=>res.info.name.toLowerCase().includes(searchText.toLowerCase()));
-            setFilresList(filterdRes);
-          }}
-          ><FaSearch size={20} /></button>
+  return resList.length === 0 ? (
+    <Shimmer />
+  ) : (
+    <div className=" flex-col p-2 mx-4 md:mx-8">
+      <div className="flex justify-between items-center mx-4 md:mx-8 my-8">
+        <div className="p-2 flex border-2 rounded-lg">
+          <input
+            className=" outline-none"
+            placeholder="Restros ...."
+            value={searchText}
+            onChange={(e) => {
+              setSearchText(e.target.value);
+            }}
+          />
+          <button
+            className=""
+            onClick={() => {
+              let filterdRes = resList.filter((res) =>
+                res.info.name.toLowerCase().includes(searchText.toLowerCase())
+              );
+              setFilresList(filterdRes);
+            }}
+          >
+            <FaSearch size={20} />
+          </button>
         </div>
         <div className="filter">
           <button
-            className="filterbtn"
+            className="border-2 p-2 rounded-lg "
             onClick={() => {
               const filterdList = resList.filter(
                 (res) => res.info.avgRating > 4.1
@@ -60,12 +80,13 @@ const Body = () => {
           </button>
         </div>
       </div>
-      <div className="resto-container">
+      <div className="flex flex-wrap justify-around md:justify-between mx-4 md:mx-8">
         {FilresList.map((restraurant) => (
-          <Link 
-            key={restraurant.info.id} 
-            to={"/Restaurants/"+restraurant.info.id}>
-            <RestaurantCard  resData={restraurant} />
+          <Link
+            key={restraurant.info.id}
+            to={"/Restaurants/" + restraurant.info.id}
+          >
+            <RestaurantCard resData={restraurant} />
           </Link>
         ))}
       </div>
