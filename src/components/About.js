@@ -50,15 +50,13 @@ function About() {
               delivering meals to busy professionals and families. Over the
               years, we expanded our partnerships, incorporated advanced
               technology for seamless ordering, and grew into a nationwide
-              service. Today, we pride ourselves on connecting customers with a
-              wide variety of local and gourmet cuisine, making dining
-              effortless and enjoyable for everyone.
+              service.
             </p>
           </div>
         </div>
       </div>
 
-      <div className="ourTeamContainer flex flex-col justify-around p-8 bg-fuchsia-200 rounded-3xl">
+      <div className="ourTeamContainer flex flex-col justify-around p-8 bg-fuchsia-100 rounded-3xl">
         <div className="TeamDesc flex flex-col md:flex-row justify-between items-center py-2 mb-8">
           <div className="ourTeamTitle font-bold text-2xl mb-4 md:mb-0 md:w-auto">
             Our Team

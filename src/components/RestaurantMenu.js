@@ -14,17 +14,18 @@ const RestaurantMenu = () => {
   }
 
   const {name, cuisines, costForTwoMessage}= resInfo?.cards[2]?.card?.card?.info ;
-  const {itemCards}=resInfo?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards[2]?.card?.card;
+  const {itemCards}=resInfo?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards[0]?.card?.card;
+  console.log(resInfo?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards);
   
   return (
     <div className="menu">
-      <h2 className="restoName">{resInfo?.cards[2]?.card?.card?.info?.name}</h2>
-      <h3>{resInfo?.cards[2]?.card?.card?.info?.cuisines}</h3>
-      <h2>{resInfo?.cards[2]?.card?.card?.info?.costForTwoMessage}</h2>
-      .<ul>
+      <h2 className="restoName">{name}</h2>
+      <h3>{cuisines}</h3>
+      <h2>{costForTwoMessage}</h2>
+      <ul>
         {itemCards.map((item)=>(
           <li>
-            {item.card.info.name} {item.card.info.price || item.card.info.finalPrice}
+            {item?.card?.info?.name}
           </li>
         ))
         }

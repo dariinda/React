@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import RestaurantCard from "./RestaurantCard";
+import RestaurantCard,{withRatingLabel} from "./RestaurantCard";
 import Shimmer from "./Shimmer";
 import { FaSearch } from "react-icons/fa";
 import { Link } from "react-router-dom";
@@ -10,6 +10,10 @@ const Body = () => {
   const [FilresList, setFilresList] = useState([]);
   const [searchText, setSearchText] = useState("");
 
+  const ResaturantCardWithRating = withRatingLabel(RestaurantCard);
+
+  console.log("body rendered",resList);
+
   useEffect(() => {
     fetchData();
   }, []);
@@ -19,7 +23,6 @@ const Body = () => {
       "https://www.swiggy.com/dapi/restaurants/list/v5?lat=26.95250&lng=75.71050&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
     );
     const json = await data.json();
-    console.log(json);
     setResList(
       json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants
     );
@@ -84,9 +87,9 @@ const Body = () => {
         {FilresList.map((restraurant) => (
           <Link
             key={restraurant.info.id}
-            to={"/Restaurants/" + restraurant.info.id}
+            to={"/restaurants/" + restraurant.info.id}
           >
-            <RestaurantCard resData={restraurant} />
+            {restraurant?.info?.totalRatingsString ? <ResaturantCardWithRating resData={restraurant}/> : < RestaurantCard resData={restraurant} />}
           </Link>
         ))}
       </div>
