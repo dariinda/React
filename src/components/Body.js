@@ -44,17 +44,25 @@ const Body = () => {
   //Adding loading , until API is fetched
 
   return resList.length === 0 ? (
-    <Shimmer />
+   <Shimmer />
   ) : (
     <div className=" flex-col p-2 mx-4 md:mx-8">
       <div className="flex justify-between items-center mx-4 md:mx-8 my-8">
         <div className="p-2 flex border-2 rounded-lg">
           <input
-            className=" outline-none"
+            className="outline-none"
             placeholder="Restros ...."
             value={searchText}
             onChange={(e) => {
               setSearchText(e.target.value);
+            }}
+            onKeyDown={(e)=>{
+              if(e.key==="Enter"){
+                let filterdRes = resList.filter((res) =>
+                  res.info.name.toLowerCase().includes(searchText.toLowerCase())
+                );
+                setFilresList(filterdRes);
+              }
             }}
           />
           <button
